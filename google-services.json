@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "416848978606",
+    "project_id": "chandravanshi-mahasabha",
+    "storage_bucket": "chandravanshi-mahasabha.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416848978606:android:97c9253eacc6dd71f2033f",
+        "android_client_info": {
+          "package_name": "com.chandravanshi.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyr4LAv2_micaf--q00ALnxpXK_X0l5o0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
