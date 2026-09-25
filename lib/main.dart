@@ -61,7 +61,6 @@ class _RoleBasedLoginScreenState extends State<RoleBasedLoginScreen> {
     String role = "MEMBER";
     String? assignedDistrict;
 
-    // पदाधिकारी मोड चुनने पर यह सुपर एडमिन के रूप में खुलेगा
     if (_isAdminLogin) {
       role = "SUPER_ADMIN";
     }
@@ -87,16 +86,31 @@ class _RoleBasedLoginScreenState extends State<RoleBasedLoginScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 20),
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
+              // आपका असली आधिकारिक लोगो (app_logo.png)
               Container(
-                width: 90,
-                height: 90,
+                width: 120,
+                height: 120,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF800000),
                   shape: BoxShape.circle,
-                  border: Border.all(color: Colors.amber, width: 3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.15),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    )
+                  ],
                 ),
-                child: const Icon(Icons.shield, size: 50, color: Colors.amber),
+                child: ClipOval(
+                  child: Image.asset(
+                    'app_logo.png',
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      color: const Color(0xFF800000),
+                      child: const Icon(Icons.shield, size: 60, color: Colors.amber),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(height: 14),
               const Text(
@@ -110,8 +124,9 @@ class _RoleBasedLoginScreenState extends State<RoleBasedLoginScreen> {
               ),
               const SizedBox(height: 4),
               const Text(
-                'डिजिटल समाज प्रबंधन पोर्टल • स्थापना 1906',
-                style: TextStyle(fontSize: 12, color: Colors.brown),
+                'स्थापित 1906 • निबंधन सं० 2145/30/1912\nडिजिटल समाज प्रबंधन पोर्टल',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 12, color: Colors.brown, height: 1.3),
               ),
               const SizedBox(height: 25),
 
@@ -228,14 +243,14 @@ class HierarchyExplorerScreen extends StatefulWidget {
 class _HierarchyExplorerScreenState extends State<HierarchyExplorerScreen> {
   Map<String, Map<String, List<String>>> hierarchy = {
     'झारखंड': {
-      'कोडरमा': ['झुमरी तिलैया नगर परिषद', 'कोडरमा प्रखंड', 'डोमचांच प्रखंड', 'जयनगर प्रखंड'],
-      'हज़ारीबाग': ['हज़ारीबाग सदर', 'बरही', 'चौपारण'],
-      'गिरिडीह': ['गिरिडीह सदर', 'बगोदर', 'डुमरी'],
-      'धनबाद': ['धनबाद नगर निगम', 'झरिया', 'बाघमारा'],
+      'कोडरमा': ['झुमरी तिलैया नगर परिषद', 'कोडरमा प्रखंड', 'डोमचांच प्रखंड', 'जयनगर प्रखंड', 'मरकच्चो प्रखंड', 'सतगावां प्रखंड'],
+      'हज़ारीबाग': ['हज़ारीबाग सदर', 'बरही', 'चौपारण', 'इचाक'],
+      'गिरिडीह': ['गिरिडीह सदर', 'बगोदर', 'डुमरी', 'धनवार'],
+      'धनबाद': ['धनबाद नगर निगम', 'झरिया', 'बाघमारा', 'निरसा'],
     },
     'बिहार': {
-      'गया': ['गया नगर निगम', 'बोधगया', 'शेरघाटी'],
-      'पटना': ['पटना नगर निगम', 'दानापुर', 'फतुहा'],
+      'गया': ['गया नगर निगम', 'बोधगया', 'शेरघाटी', 'टेकारी'],
+      'पटना': ['पटना नगर निगम', 'दानापुर', 'फतुहा', 'बाढ़'],
     },
   };
 
@@ -577,9 +592,17 @@ class UnitDashboardScreen extends StatelessWidget {
           children: [
             Card(
               child: ListTile(
-                leading: const CircleAvatar(
-                  backgroundColor: Color(0xFF800000),
-                  child: Icon(Icons.temple_hindu, color: Colors.amber),
+                leading: Container(
+                  width: 45,
+                  height: 45,
+                  decoration: const BoxDecoration(shape: BoxShape.circle),
+                  child: ClipOval(
+                    child: Image.asset(
+                      'app_logo.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.shield, color: Color(0xFF800000)),
+                    ),
+                  ),
                 ),
                 title: Text('$block इकाई'),
                 subtitle: const Text('हमारा समाज • हमारी पहचान'),
