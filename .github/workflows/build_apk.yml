@@ -26,12 +26,10 @@ jobs:
         run: |
           sed -i 's/android:label="[^"]*"/android:label="Chandravanshi Mahasabha"/' android/app/src/main/AndroidManifest.xml || true
 
-      - name: Configure Firebase & Google Services
+      - name: Setup Firebase Config
         run: |
           mkdir -p android/app
           cp google-services.json android/app/google-services.json || true
-          sed -i '/dependencies {/a \        classpath "com.google.gms:google-services:4.4.2"' android/build.gradle || true
-          echo 'apply plugin: "com.google.gms.google-services"' >> android/app/build.gradle
 
       - name: Generate Keystore and Print SHA
         run: |
@@ -44,8 +42,8 @@ jobs:
       - name: Generate App Launcher Icons
         run: dart run flutter_launcher_icons
 
-      - name: Build APK (Signed)
-        run: flutter build apk --release
+      - name: Build APK (Release)
+        run: flutter build apk --release --no-tree-shake-icons
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
