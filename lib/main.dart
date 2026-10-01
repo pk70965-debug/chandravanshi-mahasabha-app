@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // ऐप को ग्रे स्क्रीन से बचाने के लिए सेफ़ गार्ड
+  // ऐप को क्रैश या लाल/ग्रे एरर से बचाने के लिए सेफ़ गार्ड
   ErrorWidget.builder = (FlutterErrorDetails details) {
     return Scaffold(
       body: Center(
@@ -24,10 +24,20 @@ void main() async {
   };
 
   try {
-    await Firebase.initializeApp();
+    // Firebase का सीधा इनिशियलाइज़ेशन
+    await Firebase.initializeApp(
+      options: const FirebaseOptions(
+        apiKey: 'AIzaSyDyr4LAv2_micaf--q00ALnxpXK_X0l5o0',
+        appId: '1:416848978606:android:97c9253eacc6dd71f2033f',
+        messagingSenderId: '416848978606',
+        projectId: 'chandravanshi-mahasabha',
+        storageBucket: 'chandravanshi-mahasabha.firebasestorage.app',
+      ),
+    );
   } catch (e) {
     debugPrint("Firebase init: $e");
   }
+
   runApp(const ChandravanshiApp());
 }
 
