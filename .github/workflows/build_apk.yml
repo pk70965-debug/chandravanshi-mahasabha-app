@@ -33,7 +33,7 @@ jobs:
 
       - name: Print SHA Fingerprints
         run: |
-          keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android || true
+          keytool -printcert -jarfile build/app/outputs/flutter-apk/app-release.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
