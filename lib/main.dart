@@ -6,6 +6,23 @@ import 'package:intl/intl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // ऐप को ग्रे स्क्रीन से बचाने के लिए सेफ़ गार्ड
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            'लोड करने में समस्या: ${details.exception}',
+            textAlign: TextAlign.center,
+            style: const TextStyle(color: Colors.red),
+          ),
+        ),
+      ),
+    );
+  };
+
   try {
     await Firebase.initializeApp();
   } catch (e) {
@@ -159,21 +176,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 100,
-                      height: 100,
+                      width: 90,
+                      height: 90,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xFF8B0000), width: 3),
+                        color: const Color(0xFF8B0000).withOpacity(0.08),
+                        border: Border.all(color: const Color(0xFF8B0000), width: 2),
                       ),
-                      child: ClipOval(
-                        child: Image.asset(
-                          'IMG_20260925_175930.png',
-                          fit: BoxFit.cover,
-                          errorBuilder: (ctx, err, stack) => const Icon(
-                            Icons.account_balance,
-                            size: 50,
-                            color: Color(0xFF8B0000),
-                          ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.account_balance,
+                          size: 48,
+                          color: Color(0xFF8B0000),
                         ),
                       ),
                     ),
@@ -318,21 +332,18 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   Container(
-                    width: 90,
-                    height: 90,
+                    width: 80,
+                    height: 80,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xFF8B0000), width: 2.5),
+                      color: const Color(0xFF8B0000).withOpacity(0.08),
+                      border: Border.all(color: const Color(0xFF8B0000), width: 2),
                     ),
-                    child: ClipOval(
-                      child: Image.asset(
-                        'IMG_20260925_175930.png',
-                        fit: BoxFit.cover,
-                        errorBuilder: (ctx, err, stack) => const Icon(
-                          Icons.account_balance,
-                          size: 50,
-                          color: Color(0xFF8B0000),
-                        ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.account_balance,
+                        size: 44,
+                        color: Color(0xFF8B0000),
                       ),
                     ),
                   ),
