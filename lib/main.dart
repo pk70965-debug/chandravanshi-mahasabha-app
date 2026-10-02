@@ -45,7 +45,7 @@ class ChandravanshiPortalApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'अखिल भारतीय चंद्रवंशी क्षत्रिय महासभा',
+      title: 'अखिल भारतवर्षीय चंद्रवंशी क्षत्रिय महासभा',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFF0A192F),
@@ -93,16 +93,11 @@ class MainLandingScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'अखिल भारतीय',
-                style: TextStyle(color: Colors.white70, fontSize: 13, letterSpacing: 1),
-              ),
-              const SizedBox(height: 2),
-              const Text(
-                'चंद्रवंशी क्षत्रिय महासभा',
+                'अखिल भारतवर्षीय चंद्रवंशी क्षत्रिय महासभा',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 21,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.5,
                 ),
@@ -356,7 +351,7 @@ class _MemberLoginScreenState extends State<MemberLoginScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF0D233A),
         foregroundColor: Colors.white,
-        title: const Text('सदस्यता सेवा', style: TextStyle(fontSize: 16)),
+        title: const Text('अखिल भारतवर्षीय चंद्रवंशी क्षत्रिय महासभा', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: Center(
@@ -529,7 +524,7 @@ class _MemberRegistrationFormState extends State<MemberRegistrationForm> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF0D233A),
         foregroundColor: Colors.white,
-        title: const Text('सदस्य पंजीकरण', style: TextStyle(fontSize: 16)),
+        title: const Text('अखिल भारतवर्षीय चंद्रवंशी क्षत्रिय महासभा', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -711,7 +706,7 @@ class MemberStatusScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF0D233A),
         foregroundColor: Colors.white,
-        title: const Text('आवेदन स्थिति', style: TextStyle(fontSize: 16)),
+        title: const Text('अखिल भारतवर्षीय चंद्रवंशी क्षत्रिय महासभा', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         centerTitle: true,
         actions: [
           IconButton(
