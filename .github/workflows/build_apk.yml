@@ -25,7 +25,7 @@ jobs:
 
       - name: Create Android Platform
         run: |
-          flutter create --platforms=android --org com.chandravanshi --project-name chandravanshi_mahasabha_app .
+          flutter create --platforms=android --org com.chandravanshi --project-name chandravanshi_mahasabha_app --no-pub .
 
       - name: Set App Name to Capital
         run: |
