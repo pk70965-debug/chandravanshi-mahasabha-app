@@ -63,7 +63,7 @@ class ChandravanshiPortalApp extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 1. मुख्य लैंडिंग स्क्रीन (Grand Landing Screen with Real Logo & Portrait)
+// 1. मुख्य स्क्रीन (लोगो और मगध सम्राट जरासंध जी की प्रतिमा)
 // ---------------------------------------------------------------------------
 class MainLandingScreen extends StatelessWidget {
   const MainLandingScreen({super.key});
@@ -80,7 +80,7 @@ class MainLandingScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 10),
               
-              // गोल महासभा लोगो (Official Round Emblem)
+              // गोल लोगो (Official Round Logo)
               Container(
                 width: 86,
                 height: 86,
@@ -124,7 +124,7 @@ class MainLandingScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // मगध सम्राट महाराजा जरासंध जी बैनर (Real Photo)
+              // मगध सम्राट महाराजा जरासंध जी बैनर
               Card(
                 elevation: 6,
                 shape: RoundedRectangleBorder(
@@ -155,7 +155,7 @@ class MainLandingScreen extends StatelessWidget {
                             border: Border.all(color: Colors.orange.shade200),
                           ),
                           child: Image.asset(
-                            'maharaja_jarasandh.png',
+                            'IMG_20260929_050630.jpg',
                             fit: BoxFit.contain,
                             errorBuilder: (context, error, stackTrace) => Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -259,7 +259,7 @@ class MainLandingScreen extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 2. सदस्य लॉगिन स्क्रीन (Member Login Screen)
+// 2. सदस्य लॉगिन स्क्रीन
 // ---------------------------------------------------------------------------
 class MemberLoginScreen extends StatefulWidget {
   const MemberLoginScreen({super.key});
@@ -484,7 +484,7 @@ class _MemberLoginScreenState extends State<MemberLoginScreen> {
 }
 
 // ---------------------------------------------------------------------------
-// 3. नया सदस्य पंजीकरण फॉर्म (Member Registration Form - 12 Fields)
+// 3. नया सदस्य पंजीकरण फॉर्म (12 Fields)
 // ---------------------------------------------------------------------------
 class MemberRegistrationForm extends StatefulWidget {
   final User user;
@@ -641,7 +641,6 @@ class _MemberRegistrationFormState extends State<MemberRegistrationForm> {
                       ),
                       const SizedBox(height: 12),
 
-                      // विशेष अभियान बैनर
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
@@ -720,7 +719,7 @@ class _MemberRegistrationFormState extends State<MemberRegistrationForm> {
 }
 
 // ---------------------------------------------------------------------------
-// 4. सदस्य आवेदन स्थिति (Application Status Screen)
+// 4. सदस्य आवेदन स्थिति (Status Screen)
 // ---------------------------------------------------------------------------
 class MemberStatusScreen extends StatelessWidget {
   final String userId;
@@ -817,7 +816,6 @@ class MemberStatusScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 14),
 
-                // सदस्य विवरण कार्ड
                 Card(
                   elevation: 2,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -883,7 +881,7 @@ class MemberStatusScreen extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 5. सुपर एडमिन पोर्टल (Super Admin Portal)
+// 5. सुपर एडमिन पोर्टल
 // ---------------------------------------------------------------------------
 class SuperAdminLoginScreen extends StatefulWidget {
   const SuperAdminLoginScreen({super.key});
@@ -1076,7 +1074,6 @@ class _SuperAdminDashboardState extends State<SuperAdminDashboard> {
             ),
             const SizedBox(height: 16),
 
-            // सभी व्यवस्थापकों की सूची
             const Text('सभी व्यवस्थापक', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black87)),
             const SizedBox(height: 8),
             StreamBuilder<QuerySnapshot>(
@@ -1110,7 +1107,7 @@ class _SuperAdminDashboardState extends State<SuperAdminDashboard> {
 }
 
 // ---------------------------------------------------------------------------
-// 6. क्षेत्रीय एडमिन पोर्टल (Regional Admin Portal - Approval System)
+// 6. क्षेत्रीय एडमिन पोर्टल (Approval System)
 // ---------------------------------------------------------------------------
 class RegionalAdminLoginScreen extends StatefulWidget {
   const RegionalAdminLoginScreen({super.key});
