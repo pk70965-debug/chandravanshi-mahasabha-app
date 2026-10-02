@@ -63,7 +63,7 @@ class ChandravanshiPortalApp extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
-// 1. मुख्य लैंडिंग स्क्रीन (Grand Landing Screen)
+// 1. मुख्य लैंडिंग स्क्रीन (Grand Landing Screen with Real Logo & Portrait)
 // ---------------------------------------------------------------------------
 class MainLandingScreen extends StatelessWidget {
   const MainLandingScreen({super.key});
@@ -79,16 +79,31 @@ class MainLandingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 10),
+              
+              // गोल महासभा लोगो (Official Round Emblem)
               Container(
-                width: 76,
-                height: 76,
+                width: 86,
+                height: 86,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white,
-                  border: Border.all(color: const Color(0xFFD4AF37), width: 2),
+                  border: Border.all(color: const Color(0xFFD4AF37), width: 2.5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 8,
+                      offset: const Offset(0, 3),
+                    )
+                  ],
                 ),
-                child: const Center(
-                  child: Icon(Icons.shield, size: 44, color: Color(0xFF0D233A)),
+                child: ClipOval(
+                  child: Image.asset(
+                    'IMG_20260925_175930.png',
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const Center(
+                      child: Icon(Icons.shield, size: 44, color: Color(0xFF0D233A)),
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
@@ -109,7 +124,7 @@ class MainLandingScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // मगध सम्राट महाराजा जरासंध जी बैनर
+              // मगध सम्राट महाराजा जरासंध जी बैनर (Real Photo)
               Card(
                 elevation: 6,
                 shape: RoundedRectangleBorder(
@@ -130,24 +145,30 @@ class MainLandingScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      Container(
-                        height: 170,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.white,
-                          border: Border.all(color: Colors.orange.shade200),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.fort, size: 64, color: Colors.orange.shade900),
-                            const SizedBox(height: 8),
-                            const Text(
-                              'मगध साम्राज्य - अखंड शौर्य का प्रतीक',
-                              style: TextStyle(fontSize: 12, color: Colors.black54),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: Container(
+                          height: 240,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: Colors.orange.shade200),
+                          ),
+                          child: Image.asset(
+                            'maharaja_jarasandh.png',
+                            fit: BoxFit.contain,
+                            errorBuilder: (context, error, stackTrace) => Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.fort, size: 64, color: Colors.orange.shade900),
+                                const SizedBox(height: 8),
+                                const Text(
+                                  'मगध साम्राज्य - अखंड शौर्य का प्रतीक',
+                                  style: TextStyle(fontSize: 12, color: Colors.black54),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                       const SizedBox(height: 12),
@@ -367,13 +388,19 @@ class _MemberLoginScreenState extends State<MemberLoginScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    width: 72,
-                    height: 72,
+                    width: 76,
+                    height: 76,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: const Color(0xFF0D233A).withOpacity(0.08),
+                      border: Border.all(color: const Color(0xFFD4AF37), width: 1.5),
                     ),
-                    child: const Icon(Icons.shield, size: 40, color: Color(0xFF0D233A)),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'IMG_20260925_175930.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) => const Icon(Icons.shield, size: 40, color: Color(0xFF0D233A)),
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 12),
                   const Text(
